@@ -10,11 +10,14 @@ class LeetCode():
     def decrement(x):
         print("decrement")
         return x - 1
-
+    
     def twoSum1(self, nums: List[int], target: int) -> List[int]:
-        for i in range(len(nums)):
-            for j in range(i, len(nums)):
-                if i + j == target:
-                    return {i,j}
+        numTemp = {}
         
-        return nums
+        for i in range(len(nums)):
+            compl = target - nums[i]
+            if compl in numTemp and numTemp[compl] != i:
+                return [numTemp[compl], i]
+            numTemp[nums[i]] = i
+            
+        return []
