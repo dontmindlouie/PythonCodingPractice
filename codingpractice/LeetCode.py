@@ -21,3 +21,24 @@ class LeetCode():
             numTemp[nums[i]] = i
             
         return []
+    
+    def palendrome9(self, x):
+        if x < 0: return False
+        backward = str(x) [::-1]
+        if x == int(backward):
+            return True
+        else:
+            return False
+        
+    def palendrome9a(self, x):
+        if x < 0: return False
+        
+        xi = x
+        reversed = 0
+        
+        while xi != 0:
+            digit = xi % 10
+            reversed = reversed * 10 + digit
+            xi //= 10
+        
+        return reversed == x
