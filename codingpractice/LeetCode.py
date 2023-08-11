@@ -112,7 +112,9 @@ class LeetCode():
             iLetter += 1
         return result
     
-    
+    def validParenthesis20a(self, s: str) -> bool:
+        
+        return True
         
         
         

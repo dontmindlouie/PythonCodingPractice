@@ -98,4 +98,8 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         result = LeetCode.LeetCode.longestCommonPrefix14a(self, strs)
         assert result == expected
         
-    
+    def test_validParenthesis20a1(self):
+        s = "()"
+        expected = True
+        result = LeetCode.LeetCode.validParenthesis20a(self, s)
+        assert result == expected
