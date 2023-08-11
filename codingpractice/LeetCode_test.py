@@ -103,3 +103,39 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         expected = True
         result = LeetCode.LeetCode.validParenthesis20a(self, s)
         assert result == expected
+        
+    def test_validParenthesis20a2(self):
+        s = "()[]{}"
+        expected = True
+        result = LeetCode.LeetCode.validParenthesis20a(self, s)
+        assert result == expected
+        
+    def test_validParenthesis20a3(self):
+        s = "(]"
+        expected = False
+        result = LeetCode.LeetCode.validParenthesis20a(self, s)
+        assert result == expected
+        
+    def test_validParenthesis20a4(self):
+        s = "([)]"
+        expected = False
+        result = LeetCode.LeetCode.validParenthesis20a(self, s)
+        assert result == expected
+        
+    def test_validParenthesis20a5(self):
+        s = "{[]}"
+        expected = True
+        result = LeetCode.LeetCode.validParenthesis20a(self, s)
+        assert result == expected
+        
+    def test_validParenthesis20a6(self):
+        s = "]"
+        expected = False
+        result = LeetCode.LeetCode.validParenthesis20a(self, s)
+        assert result == expected
+        
+    def test_validParenthesis20a7(self):
+        s = "["
+        expected = False
+        result = LeetCode.LeetCode.validParenthesis20a(self, s)
+        assert result == expected

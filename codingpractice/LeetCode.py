@@ -113,7 +113,34 @@ class LeetCode():
         return result
     
     def validParenthesis20a(self, s: str) -> bool:
-        
+        bracketTracker = []
+        for i in range(len(s)):
+            match s[i]:
+                case "(":
+                    bracketTracker.append("(")
+                case "[":
+                    bracketTracker.append("[")
+                case "{":
+                    bracketTracker.append("{")
+                case ")":
+                    if len(bracketTracker) == 0:
+                        return False
+                    if bracketTracker[-1] == "(":
+                        del bracketTracker[-1]
+                    else: return False
+                case "]":
+                    if len(bracketTracker) == 0:
+                        return False
+                    if bracketTracker[-1] == "[":
+                        del bracketTracker[-1]
+                    else: return False
+                case "}":
+                    if len(bracketTracker) == 0:
+                        return False
+                    if bracketTracker[-1] == "{":
+                        del bracketTracker[-1]
+                    else: return False
+        if len(bracketTracker) > 0: return False
         return True
         
         
