@@ -55,5 +55,47 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         expected = True
         result = LeetCode.LeetCode.palendrome9a(LeetCode, x)
         assert result == expected
-    
         
+    def test_romanToInt13a1(self):
+        s = "III"
+        expected = 3
+        result = LeetCode.LeetCode.romanToInt13(LeetCode, s)
+        assert result == expected
+    
+    def test_romanToInt13a2(self):
+        s = "IV"
+        expected = 4
+        result = LeetCode.LeetCode.romanToInt13(LeetCode, s)
+        assert result == expected
+        
+    def test_romanToInt13a2(self):
+        s = "LVIII"
+        expected = 58
+        result = LeetCode.LeetCode.romanToInt13(LeetCode, s)
+        assert result == expected
+        
+    def test_romanToInt13a3(self):
+        s = "MCMXCIV"
+        expected = 1994
+        result = LeetCode.LeetCode.romanToInt13(LeetCode, s)
+        assert result == expected
+        
+    def test_longestCommonPrefix14a1(self):
+        strs = ["flower","flow","flight"]
+        expected = "fl"
+        result = LeetCode.LeetCode.longestCommonPrefix14a(self, strs)
+        assert result == expected
+    
+    def test_longestCommonPrefix14a2(self):
+        strs = ["dog","racecar","car"]
+        expected = ""
+        result = LeetCode.LeetCode.longestCommonPrefix14a(self, strs)
+        assert result == expected
+        
+    def test_longestCommonPrefix14a3(self):
+        strs = ["ab", "a"]
+        expected = "a"
+        result = LeetCode.LeetCode.longestCommonPrefix14a(self, strs)
+        assert result == expected
+        
+    
