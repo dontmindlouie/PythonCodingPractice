@@ -141,10 +141,10 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         result = LeetCode.LeetCode.validParenthesis20a(self, s)
         assert result == expected
         
-    # def test_mergeTwoList21a1(self):
-    #     list1: [1,2,3]
-    #     list2: [1,3]
-    #     expected = [1,1,2,3,3]
-    #     result = LeetCode.LeetCode.mergeTwoLists21(self, list1, list2)
-    #     assert result == expected
+    def test_mergeTwoList21a1(self):
+        list1 = [1,2,3]
+        list2 = [1,3]
+        expected = [1,1,2,3,3]
+        result = LeetCode.LeetCode.mergeTwoLists21(self, list1, list2)
+        assert result == expected
     
