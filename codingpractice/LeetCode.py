@@ -1,4 +1,5 @@
-from typing import List
+from typing import List#, Optional
+# from LeetCode.LeetCodeObject import ListNode
 
 class LeetCode():
     def __init__(self) -> None:
@@ -142,6 +143,8 @@ class LeetCode():
                     else: return False
         if len(bracketTracker) > 0: return False
         return True
-        
+    
+    # def mergeTwoLists21(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    #     return [1,1,2,3,3]
         
         
