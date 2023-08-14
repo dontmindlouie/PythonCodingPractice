@@ -2,7 +2,7 @@
 
 import LeetCode
 import unittest
-import LeetCodeObject
+from LeetCodeObject import ListNode
 
 class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
     
@@ -142,9 +142,13 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         assert result == expected
         
     def test_mergeTwoList21a1(self):
-        list1 = [1,2,3]
-        list2 = [1,3]
-        expected = [1,1,2,3,3]
+        list1 = ListNode(1, ListNode(3))
+        list2 = ListNode(1,ListNode(2))
+        expected = ListNode(1,ListNode(1, 
+            ListNode(2, ListNode(3))))
         result = LeetCode.LeetCode.mergeTwoLists21(self, list1, list2)
-        assert result == expected
+        while(expected != None):
+            assert result.val == expected.val
+            result = result.next
+            expected = expected.next
     

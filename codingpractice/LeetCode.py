@@ -145,6 +145,29 @@ class LeetCode():
         return True
     
     def mergeTwoLists21(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        return [1,1,2,3,3]
+        
+        result = ListNode()
+        resultHead = result
+        
+        while(list1 != None or list2 != None):
+            result.next = ListNode()
+            result = result.next
+            if list1 != None: 
+                if list2 != None:
+                    if list1.val > list2.val:
+                        result.val = list2.val
+                        list2 = list2.next
+                    else: 
+                        result.val = list1.val
+                        list1 = list1.next
+                else: 
+                    result.val = list1.val
+                    list1 = list1.next
+            else:
+                if list2 != None:
+                    result.val = list2.val
+                    list2 = list2.next
+        resultHead = resultHead.next
+        return resultHead
         
         
