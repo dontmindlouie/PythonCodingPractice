@@ -185,3 +185,6 @@ class LeetCode():
             i += 1
         
         return dupli + 1
+    
+    def removeElement27(self, nums: List[int], val: int) -> int:
+        return 2

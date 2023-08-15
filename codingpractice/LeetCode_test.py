@@ -169,5 +169,17 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         assert expected == result
         for i in range(len(expectedNums)):
             assert expectedNums[i] == nums[i]
+            
+    def test_removeElement27a2(self):
+        nums = [3,2,2,3]
+        val = 3
+        expected = 2
+        expectedNums = [2,2]
+        result = LeetCode.LeetCode.removeElement27(self, nums, val)
+        assert result == expected
+        # for i in range(len(expectedNums)):
+        #     assert expectedNums[i] == nums[i]
+        
+        
         
     
