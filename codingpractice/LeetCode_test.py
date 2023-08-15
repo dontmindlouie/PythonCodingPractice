@@ -151,4 +151,23 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
             assert result.val == expected.val
             result = result.next
             expected = expected.next
+            
+    def test_removeDuplicates25a1(self):
+        nums = [1,1,1,2,2,3]
+        expected = 3
+        expectedNums = [1,2,3]
+        result = LeetCode.LeetCode.removeDuplicates25(self,nums)
+        assert expected == result
+        for i in range(len(expectedNums)):
+            assert expectedNums[i] == nums[i]
+            
+    def test_removeDuplicates25a2(self):
+        nums = [1,1]
+        expected = 1
+        expectedNums = [1]
+        result = LeetCode.LeetCode.removeDuplicates25(self,nums)
+        assert expected == result
+        for i in range(len(expectedNums)):
+            assert expectedNums[i] == nums[i]
+        
     

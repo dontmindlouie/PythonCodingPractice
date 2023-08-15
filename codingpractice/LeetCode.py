@@ -170,4 +170,18 @@ class LeetCode():
         resultHead = resultHead.next
         return resultHead
         
+    def removeDuplicates25(self, nums: List[int]) -> int:
+        if len(nums) == 0: return 0
+        if len(nums) == 1: return 1
+        dupli = 0
+        findDupl = False
+        i = 1
+        while(i < len(nums)):
+            while nums[i] == nums[dupli]:
+                i += 1
+                if i >= len(nums): return dupli + 1
+            dupli += 1
+            nums[dupli] = nums[i]
+            i += 1
         
+        return dupli + 1
