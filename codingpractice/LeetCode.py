@@ -188,11 +188,26 @@ class LeetCode():
     
     def removeElement27(self, nums: List[int], val: int) -> int:
         if len(nums) == 0: return 0
-        
         iremoved = 0
         for i in range(0, len(nums)):
             if nums[i] != val:
                 nums[iremoved] = nums[i]
                 iremoved += 1
-        
         return iremoved
+    
+    def strStr28(self, haystack: str, needle: str) -> int:
+
+        hayI = 0
+        while hayI < len(haystack): 
+            if needle[0] == haystack[hayI]:
+                needI = 0
+                tempHayI = hayI
+                while needI < len(needle) and tempHayI < len(haystack) and needle[needI] == haystack[tempHayI]:
+                    needI += 1
+                    tempHayI += 1
+                if needI == len(needle):
+                    return hayI
+                elif tempHayI >= len(haystack):
+                    return -1
+            hayI += 1
+        return -1

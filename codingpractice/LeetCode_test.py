@@ -189,6 +189,28 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         assert result == expected
         for i in range(len(expectedNums)):
             assert expectedNums[i] == nums[i]
+            
+    def test_strStr28a1(self):
+        haystack = "sadbutsad"
+        needle = "sad"
+        expected = 0
+        result = LeetCode.LeetCode.strStr28(self, haystack, needle)
+        assert expected == result
+        
+    def test_strStr28a2(self):
+        haystack = "butsad"
+        needle = "sad"
+        expected = 3
+        result = LeetCode.LeetCode.strStr28(self, haystack, needle)
+        assert expected == result
+        
+    def test_strStr28a3(self):
+        haystack = "aaa"
+        needle = "aaaa"
+        expected = -1
+        result = LeetCode.LeetCode.strStr28(self, haystack, needle)
+        assert expected == result
+        
         
         
         
