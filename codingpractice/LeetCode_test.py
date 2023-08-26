@@ -211,7 +211,26 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         result = LeetCode.LeetCode.strStr28(self, haystack, needle)
         assert expected == result
         
+    def test_searchInsert35a1(self):
+        nums = [1,3,5,6]
+        target = 5
+        expected = 2
+        result = LeetCode.LeetCode.searchInsert35(self, nums, target)
+        assert expected == result
         
+    def test_searchInsert35a2(self):
+        nums = [1,3,5,6]
+        target = 2
+        expected = 1
+        result = LeetCode.LeetCode.searchInsert35(self, nums, target)
+        assert expected == result
+        
+    def test_searchInsert35a3(self):
+        nums = [1,3,5,6]
+        target = 7
+        expected = 4
+        result = LeetCode.LeetCode.searchInsert35(self, nums, target)
+        assert expected == result
         
         
     

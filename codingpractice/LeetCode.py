@@ -1,3 +1,4 @@
+from math import floor
 from typing import List, Optional
 from LeetCodeObject import ListNode
 
@@ -211,3 +212,31 @@ class LeetCode():
                     return -1
             hayI += 1
         return -1
+    
+    def searchInsert35(self, nums: List[int], target: int) -> int:
+        lowI = 0
+        highI = len(nums) - 1
+        if nums[len(nums)-1] < target:
+            return len(nums)
+        if nums[0] > target:
+            return 0
+        
+        while lowI < highI:
+            lowI, highI = LeetCode.binarySearch35(lowI, highI, target, nums)
+        
+        return lowI
+        
+    def binarySearch35(lowI: int, highI: int, target: int, nums: List[int]) -> (int, int):
+        midI = floor((highI - lowI) / 2) + lowI
+        if target == nums[midI]:
+            return midI, midI
+        if lowI + 1 == highI:
+            return highI, highI
+        if target > nums[midI]:
+            return midI, highI
+        
+        return lowI, midI
+        
+        
+        
+        
