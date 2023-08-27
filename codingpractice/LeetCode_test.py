@@ -232,5 +232,21 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         result = LeetCode.LeetCode.searchInsert35(self, nums, target)
         assert expected == result
         
+    def test_mySqrt69a1(self):
+        x = 8
+        expected = 2
+        result = LeetCode.LeetCode.mySqrt69(self, x)
+        assert expected == result
         
+    def test_mySqrt69a2(self):
+        x = 1
+        expected = 1
+        result = LeetCode.LeetCode.mySqrt69(self, x)
+        assert expected == result
+        
+    def test_mySqrt69a3(self):
+        x = 4
+        expected = 2
+        result = LeetCode.LeetCode.mySqrt69(self, x)
+        assert expected == result
     

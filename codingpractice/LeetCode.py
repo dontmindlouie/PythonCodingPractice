@@ -234,8 +234,28 @@ class LeetCode():
             return highI, highI
         if target > nums[midI]:
             return midI, highI
-        
         return lowI, midI
+    
+    def mySqrt69(self, x) -> int: 
+        if (x == 0): return 0
+        if (x == 1): return 1
+        temp = range(x) # todo use an integer instead lol
+        lowI = 0
+        highI = len(temp)
+        return LeetCode.sqrtBinarySearch(temp, lowI, highI, x)
+        
+    
+    def sqrtBinarySearch(temp, lowI, highI, target) -> int:
+        midI = (lowI + highI) // 2
+        if temp[midI] * temp[midI] == target:
+            return midI
+        if lowI + 1 == highI:
+            return lowI
+        if temp[midI] * temp[midI] > target:
+            return LeetCode.sqrtBinarySearch(temp, lowI, midI, target)
+        return LeetCode.sqrtBinarySearch(temp, midI, highI, target)
+        
+        
         
         
         
