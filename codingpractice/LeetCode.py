@@ -242,19 +242,109 @@ class LeetCode():
         temp = range(x) # todo use an integer instead lol
         lowI = 0
         highI = len(temp)
-        return LeetCode.sqrtBinarySearch(temp, lowI, highI, x)
+        return LeetCode.sqrt69BinarySearch(temp, lowI, highI, x)
         
-    
-    def sqrtBinarySearch(temp, lowI, highI, target) -> int:
+    def sqrt69BinarySearch(temp, lowI, highI, target) -> int:
         midI = (lowI + highI) // 2
         if temp[midI] * temp[midI] == target:
             return midI
         if lowI + 1 == highI:
             return lowI
         if temp[midI] * temp[midI] > target:
-            return LeetCode.sqrtBinarySearch(temp, lowI, midI, target)
-        return LeetCode.sqrtBinarySearch(temp, midI, highI, target)
+            return LeetCode.sqrt69BinarySearch(temp, lowI, midI, target)
+        return LeetCode.sqrt69BinarySearch(temp, midI, highI, target)
+    
+    #todo
+    def convertToTitle168(self, columnNumber: int) -> str:
+        alphaDict = {1: "A", 2: "B", 3: "C", 4: "D", 5: "E", 6: "F", 7: "G", 8: "H",
+                     9: "I", 10: "J", 11: "K", 12: "L", 13: "M", 14: "N", 15: "O",
+                     16: "P", 17: "Q", 18: "R", 19: "S", 20: "T", 21: "U", 22: "V",
+                     23: "W", 24: "X", 25: "Y", 26: "Z"}
         
+        result = ""
+        larger = columnNumber / 26
+        smaller = columnNumber % 26
+        resi = 0
+        if columnNumber == 0:
+            return ""
+        result = "A"
+        columnNumber -= 1
+        # while columnNumber > 0 :
+            # "Z" -> "A"
+            # "AZ" -> "BA" 
+            # "ZZ" -> "AAA"
+            # "ZAZ" -> "ZBA"
+            # "AZZ" -> "BAA"
+            # if preResult[preI] == 26:
+            #     tempI = preI
+            #     tempI -= 1
+            #     while tempI >= 0 and preResult[tempI] == 26:
+            #         if preResult[tempI] < 26:
+            #             preResult[tempI] = 1
+            #             #return
+            #         else: tempI -= 1
+            #     else:
+            #         #All A plus 1
+            #         tempI -= 1
+            # else:
+            #     preResult[preI] += 1
+            #     columnNumber -= 1
+        return result
+    
+    def findKey(alphaDict, value): 
+        for i in range(alphaDict):
+            if alphaDict[i] == value:
+                return i
+            
+    def majorityElement169(self, nums: List[int]) -> int:
+        alphabetTracker = {}
+        target = (len(nums))/2
+        for i in nums:
+            if i not in alphabetTracker:
+                alphabetTracker[i] = 1
+            else: alphabetTracker[i] += 1
+            if alphabetTracker[i] > target:
+                return i
+        return None
+    
+    def titleToNumber171(self, columnTitle: str) -> int:
+        alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        reverseTitle = columnTitle[::-1]
+        result = 0
+        for i in range(0,len(reverseTitle)):
+            temp = 26**i*(alphabet.index(reverseTitle[i])+1)
+            result += temp
+        return result
+        
+    def reverseBits190(self, n: int) -> int:
+        binaryInput = bin(n)
+        trimmed = binaryInput[2:]
+        reversedInput = trimmed[::-1]
+        reversedFomrated = reversedInput + ("0"*(32-len(reversedInput)))
+        result = int(reversedFomrated,2)
+        return result
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    def hammingWeight191(self, n: int) -> int:
+        nString = str(n)
+        result = 0
+        for i in nString:
+            if i == '1':
+                result += 1
+        return result
         
         
         
