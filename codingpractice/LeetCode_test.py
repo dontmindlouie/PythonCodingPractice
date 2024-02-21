@@ -297,7 +297,7 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         
     def test_hammingWeight191(self) -> int:
         
-        input = 1011
+        input = 11
         expected = 3
         result = LeetCode.LeetCode.hammingWeight191(self, input)
         assert result == expected

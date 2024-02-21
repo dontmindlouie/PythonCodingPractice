@@ -323,23 +323,9 @@ class LeetCode():
         reversedFomrated = reversedInput + ("0"*(32-len(reversedInput)))
         result = int(reversedFomrated,2)
         return result
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     def hammingWeight191(self, n: int) -> int:
-        nString = str(n)
+        nString = bin(n)[2::]
         result = 0
         for i in nString:
             if i == '1':
