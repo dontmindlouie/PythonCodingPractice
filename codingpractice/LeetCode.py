@@ -331,6 +331,20 @@ class LeetCode():
             if i == '1':
                 result += 1
         return result
+    
+    def isHappy(self, n: int) -> bool:
+        tracker = {n}
+        while(n != 1):
+            stringN = str(n)
+            interSum = 0
+            for letter in stringN:
+                interSum += int(letter) ** 2
+            if interSum in tracker:
+                return False
+            tracker.add(interSum)
+            n = interSum
+        return True
+        
         
         
         
