@@ -295,16 +295,45 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         result = LeetCode.LeetCode.reverseBits190(self, input)
         #assert expected == result
         
-    def test_hammingWeight191(self) -> int:
+    def test_hammingWeight191(self):
         input = 11
         expected = 3
         result = LeetCode.LeetCode.hammingWeight191(self, input)
         assert result == expected
         
-    def test_isHappy202(self) -> bool:
+    def test_isHappy202(self):
         input = 19
         expected = True
         result = LeetCode.LeetCode.isHappy(self, input)
         assert result == expected
+        
+    def test_compareListNode(self):
+        input1 = ListNode(1, ListNode(2))
+        input2 = ListNode(1, ListNode(2))
+        expected = True
+        result = LeetCode.LeetCode.compareListNode(self, input1, input2)
+        assert result == expected
+        
+    def test_compareListNode_2(self):
+        input1 = ListNode(1, ListNode(2))
+        input2 = ListNode(1, ListNode(3))
+        expected = False
+        result = LeetCode.LeetCode.compareListNode(self, input1, input2)
+        assert result == expected
+        
+    def test_compareListNode_3(self):
+        input1 = ListNode(1, ListNode(2))
+        input2 = ListNode(1, ListNode(2, ListNode(3)))
+        expected = False
+        result = LeetCode.LeetCode.compareListNode(self, input1, input2)
+        assert result == expected
+        
+    # def test_removeElements203(self):
+    #     inputHead = ListNode(1, ListNode(2, ListNode(6, ListNode(3, ListNode(4, ListNode(5, ListNode(6)))))))
+    #     inputVal = 6
+    #     expected
+    #     result = LeetCode.LeetCode.removeElements203(self, inputHead, inputVal)
+
+        
     
         

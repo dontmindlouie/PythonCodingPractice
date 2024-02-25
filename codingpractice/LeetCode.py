@@ -345,7 +345,19 @@ class LeetCode():
             n = interSum
         return True
         
+    def compareListNode(self, listNode1: ListNode, listNode2: ListNode) -> bool:
+        #result = False
+        while(listNode1 != None and listNode2 != None):
+            if listNode1.val != listNode2.val:
+                return False
+            listNode1 = listNode1.next
+            listNode2 = listNode2.next
+        if ((listNode1 != None) != (listNode2 != None)):
+            return False
+        return True
         
+        
+    #def removeElements203(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
         
         
         
