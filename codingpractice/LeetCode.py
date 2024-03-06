@@ -346,7 +346,6 @@ class LeetCode():
         return True
         
     def compareListNode(self, listNode1: ListNode, listNode2: ListNode) -> bool:
-        #result = False
         while(listNode1 != None and listNode2 != None):
             if listNode1.val != listNode2.val:
                 return False
@@ -357,8 +356,50 @@ class LeetCode():
         return True
         
         
-    #def removeElements203(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+    def removeElements203(self, head: Optional[ListNode], val: int) -> Optional[ListNode]:
+        # n
+        if head == None: return head
+        while(head.val == val):
+            head = head.next
+            if head == None: 
+                return head
+        node = head
+        while(node.next != None):
+            if node.next.val == val:
+                node.next = node.next.next
+            else:
+                node = node.next
+            if node == None:
+                return head
+        return head
+
+    def isIsomorphic205( s: str, t: str) -> bool:
+        dS, dT = {}, {}
+        if len(s) != len(t): 
+            return False
+        for iS, val in enumerate(s):
+            if val not in dS:
+                dS[val] = [iS]
+            else:
+                dS[val].append(iS)
+        for iT, val in enumerate(t):
+            if val not in dT:
+                dT[val] = [iT]
+            else:
+                dT[val].append(iT)
+        # listedDS = sorted(list(dS.values()))
+        # listedDT = sorted(list(dT.values()))
+        if sorted(list(dS.values())) == sorted(list(dT.values())):
+            return True
+        else: 
+            return False
+            
+
+            
         
+        
+        
+
         
         
         

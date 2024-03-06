@@ -328,12 +328,60 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         result = LeetCode.LeetCode.compareListNode(self, input1, input2)
         assert result == expected
         
-    # def test_removeElements203(self):
-    #     inputHead = ListNode(1, ListNode(2, ListNode(6, ListNode(3, ListNode(4, ListNode(5, ListNode(6)))))))
-    #     inputVal = 6
-    #     expected
-    #     result = LeetCode.LeetCode.removeElements203(self, inputHead, inputVal)
-
+    def test_removeElements203(self):
+        inputHead = ListNode(1, ListNode(2, ListNode(6, ListNode(3, ListNode(6, ListNode(4))))))
+        inputVal = 6
+        expected = ListNode(1,ListNode(2, ListNode(3, ListNode(4))))
+        result = LeetCode.LeetCode.removeElements203(self, inputHead, inputVal)
+        assert LeetCode.LeetCode.compareListNode(self, result, expected)
         
     
+    def test_removeElements203_2(self):
+        inputHead = ListNode(6)
+        inputVal = 6
+        expected = None
+        result = LeetCode.LeetCode.removeElements203(self, inputHead, inputVal)
+        assert LeetCode.LeetCode.compareListNode(self, result, expected)    
         
+    def test_removeElements203_3(self):
+        inputHead = ListNode(6, ListNode(2))
+        inputVal = 6
+        expected = ListNode(2)
+        result = LeetCode.LeetCode.removeElements203(self, inputHead, inputVal)
+        assert LeetCode.LeetCode.compareListNode(self, result, expected) 
+          
+    def test_removeElements203_4(self):
+        inputHead = ListNode(2, ListNode(6, ListNode(6)))
+        inputVal = 6
+        expected = ListNode(2)
+        result = LeetCode.LeetCode.removeElements203(self, inputHead, inputVal)
+        assert LeetCode.LeetCode.compareListNode(self, result, expected)
+        
+    def test_removeElements203_5(self):
+        inputHead = ListNode(7, ListNode(7, ListNode(7, ListNode(7))))
+        inputVal = 7
+        expected = None
+        result = LeetCode.LeetCode.removeElements203(self, inputHead, inputVal)
+        assert LeetCode.LeetCode.compareListNode(self, result, expected) 
+        
+    def test_isIsomorphic205_1(self):
+        inputA = "aabb"
+        inputB = "bbcc"
+        expected = True
+        result = LeetCode.LeetCode.isIsomorphic205(inputA, inputB)
+        assert expected == result
+        
+    def test_isIsomorphic205_2(self):
+        inputA = "ab"
+        inputB = "abc"
+        expected = False
+        result = LeetCode.LeetCode.isIsomorphic205(inputA, inputB)
+        assert expected == result
+        
+        
+    def test_isIsomorphic205_3(self):
+        inputA = "bbbaaaba"
+        inputB = "aaabbbba"
+        expected = False
+        result = LeetCode.LeetCode.isIsomorphic205(inputA, inputB)
+        assert expected == result
