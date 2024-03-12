@@ -385,3 +385,24 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         expected = False
         result = LeetCode.LeetCode.isIsomorphic205(inputA, inputB)
         assert expected == result
+        
+    def test_reverseList206_1(self):
+        inputHead = ListNode(1)
+        expected = ListNode(1)
+        result = LeetCode.LeetCode.reverseList206(self, inputHead)
+        assert LeetCode.LeetCode.compareListNode(self, result, expected)
+        
+    def test_reverseList206_2(self):
+        inputHead = ListNode(1, ListNode(2))
+        expected = ListNode(2, ListNode(1))
+        result = LeetCode.LeetCode.reverseList206(self, inputHead)
+        assert LeetCode.LeetCode.compareListNode(self, result, expected)
+        
+    def test_reverseList206_3(self):
+        inputHead = ListNode(1, ListNode(2, ListNode(3)))
+        expected = ListNode(3, ListNode(2, ListNode(1)))
+        result = LeetCode.LeetCode.reverseList206(self, inputHead)
+        assert LeetCode.LeetCode.compareListNode(self, result, expected)
+        
+        
+        

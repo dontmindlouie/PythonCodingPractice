@@ -387,12 +387,28 @@ class LeetCode():
                 dT[val] = [iT]
             else:
                 dT[val].append(iT)
-        # listedDS = sorted(list(dS.values()))
-        # listedDT = sorted(list(dT.values()))
         if sorted(list(dS.values())) == sorted(list(dT.values())):
             return True
         else: 
             return False
+        
+    def reverseList206(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head == None: return None
+        if head.next == None:
+            return head
+        node1 = head
+        node2 = head.next
+        node3 = node2.next
+        node1.next = None
+        node2.next = node1
+        
+        while node3 != None:
+            node1 = node2
+            node2 = node3
+            node3 = node3.next
+            node2.next = node1
+        
+        return node2
             
 
             
