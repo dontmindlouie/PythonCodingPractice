@@ -404,5 +404,11 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         result = LeetCode.LeetCode.reverseList206(self, inputHead)
         assert LeetCode.LeetCode.compareListNode(self, result, expected)
         
+    def test_reverseList206_recursion_1(self):
+        inputHead = ListNode(1, ListNode(2, ListNode(3)))
+        expected = ListNode(3, ListNode(2, ListNode(1)))
+        result = LeetCode.LeetCode.reverseList206_recursion(self, inputHead)
+        assert LeetCode.LeetCode.compareListNode(self, result, expected)
+        
         
         

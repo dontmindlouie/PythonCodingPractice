@@ -410,6 +410,30 @@ class LeetCode():
         
         return node2
             
+    def reverseList206_recursion(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        if head == None: return None
+        if head.next == None:
+            return head
+        node1 = head
+        node2 = head.next
+        node3 = node2.next
+        node1.next = None
+        node2.next = node1
+        
+        node2 = LeetCode.__reverseList206_reverse(node1, node2, node3)
+        
+        return node2
+    
+    def __reverseList206_reverse(node1: ListNode, node2: ListNode, node3: ListNode) -> Optional[ListNode]:
+        if node3 == None: 
+            return node2
+        node1 = node2
+        node2 = node3
+        node3 = node3.next
+        node2.next = node1
+    
+        return LeetCode.__reverseList206_reverse(node1, node2, node3)
+    
 
             
         
