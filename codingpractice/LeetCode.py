@@ -434,10 +434,16 @@ class LeetCode():
     
         return LeetCode.__reverseList206_reverse(node1, node2, node3)
     
-
-            
-        
-        
+    def containsDuplicate217(self, nums: List[int]) -> bool:
+        nums_set = set()
+        for i in nums:
+            if i in nums_set:
+                return True
+            else:
+                nums_set.add(i)
+        return False
+                
+                
         
 
         

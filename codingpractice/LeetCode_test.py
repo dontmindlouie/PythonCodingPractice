@@ -410,5 +410,20 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         result = LeetCode.LeetCode.reverseList206_recursion(self, inputHead)
         assert LeetCode.LeetCode.compareListNode(self, result, expected)
         
+    def test_containsDuplicate217_1(self):
+        input = [1,2,3,1]
+        expected = True
+        result = LeetCode.LeetCode.containsDuplicate217(self, input)
+        assert result == expected
         
+    def test_containsDuplicate217_2(self):
+        input = [1,2,3,4]
+        expected = False
+        result = LeetCode.LeetCode.containsDuplicate217(self, input)
+        assert result == expected
         
+    def test_containsDuplicate217_3(self):
+        input = [1,1,1,3,3,4,3,2,4,2]
+        expected = True
+        result = LeetCode.LeetCode.containsDuplicate217(self, input)
+        assert result == expected
