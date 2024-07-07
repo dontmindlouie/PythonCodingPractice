@@ -427,3 +427,25 @@ class LeetCode_test(unittest.TestCase, LeetCode.LeetCode):
         expected = True
         result = LeetCode.LeetCode.containsDuplicate217(self, input)
         assert result == expected
+        
+    def test_containsNearbyDuplicate_1(self):
+        inputNums = [1,2,3,1]
+        inputK = 3
+        expected = True
+        result = LeetCode.LeetCode.containsNearbyDuplicate219(self, inputNums, inputK)
+        assert expected == result
+        
+    def test_containsNearbyDuplicate_2(self):
+        inputNums = [1,0,1,1]
+        inputK = 1
+        expected = True
+        result = LeetCode.LeetCode.containsNearbyDuplicate219(self, inputNums, inputK)
+        assert expected == result
+        
+    def test_containsNearbyDuplicate_3(self):
+        inputNums = [1,2,3,1,2,3]
+        inputK = 2
+        expected = False
+        result = LeetCode.LeetCode.containsNearbyDuplicate219(self, inputNums, inputK)
+        assert expected == result
+    

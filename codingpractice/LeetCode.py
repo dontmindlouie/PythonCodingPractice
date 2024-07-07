@@ -442,7 +442,16 @@ class LeetCode():
             else:
                 nums_set.add(i)
         return False
+    
+    def containsNearbyDuplicate219(self, nums: List[int], k: int) -> bool:
+        numsList = {}
+        for i, iVal in enumerate(nums):
+            for j, jVal in enumerate(numsList):
+                if nums[i] == numsList[j] and abs(i - (j)) <= k:
+                    return True
+            numsList[i] = iVal
                 
+        return False
                 
         
 
